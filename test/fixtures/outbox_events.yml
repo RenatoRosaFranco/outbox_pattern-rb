@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aggregate_type: MyString
+  aggregate_id: 
+  event_type: MyString
+  payload: 
+  status: MyString
+  attempts_count: 1
+  published_at: 2026-07-21 19:45:40
+  last_error: MyText
+
+two:
+  aggregate_type: MyString
+  aggregate_id: 
+  event_type: MyString
+  payload: 
+  status: MyString
+  attempts_count: 1
+  published_at: 2026-07-21 19:45:40
+  last_error: MyText

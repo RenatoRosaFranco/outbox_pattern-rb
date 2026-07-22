@@ -10,8 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_22_014540) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "outbox_events", force: :cascade do |t|
+    t.uuid "aggregate_id"
+    t.string "aggregate_type"
+    t.integer "attempts_count"
+    t.datetime "created_at", null: false
+    t.string "event_type"
+    t.text "last_error"
+    t.jsonb "payload"
+    t.datetime "published_at"
+    t.string "status"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string "account_id"
+    t.integer "amount_cents"
+    t.datetime "created_at", null: false
+    t.string "currency"
+    t.string "idempotency_key"
+    t.string "status"
+    t.datetime "updated_at", null: false
+  end
 end
